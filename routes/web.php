@@ -40,3 +40,5 @@ Route::get('/author/{author}', [
 Auth::routes();
 
 Route::get('/home', 'backend\HomeController@index');
+
+Route::resource('/backend/blog', 'Backend\BlogController', ['as' => 'backend']);

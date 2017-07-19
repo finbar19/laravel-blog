@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class="copyright">&copy; 2017</p>
+                    <p class="copyright">&copy; <?php echo date("Y"); ?></p>
                 </div>
                 <div class="col-md-4">
                     <nav>
