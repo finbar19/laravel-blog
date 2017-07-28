@@ -52,5 +52,6 @@
 <script src="{{URL::asset('backend/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{URL::asset('backend/js/app.min.js')}}"></script>
+@yield('script');
 </body>
 </html>

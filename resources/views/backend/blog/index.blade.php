@@ -25,6 +25,11 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
+                <div class="box-header">
+                    <div class="pull-left">
+                        <a href="{{ route('backend.blog.create') }}" class="btn btn-success">Add New</a>
+                    </div>
+                </div>
                 <!-- /.box-header -->
                 <div class="box-body ">
                   @if (! $posts->count())

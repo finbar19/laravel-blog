@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use App\Post;
 
 class Post extends Model
 {
-    protected $dates = ['published_at'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'published_at', 'category_id'];
+    protected $dates    = ['published_at'];
 
     public function author()
     {
@@ -19,6 +19,12 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+
+    public function setPublishedAtAttribute($value)
+    {
+        $this->attributes['published_at'] = $value ?: NULL;
     }
 
     public function getImageUrlAttribute($value)
@@ -40,7 +46,7 @@ class Post extends Model
 
         if ( ! is_null($this->image))
         {
-            $ext       = substr(strchr($this->image, '.'), 1);
+            $ext       = substr(strrchr($this->image, '.'), 1);
             $thumbnail = str_replace(".{$ext}", "_thumb.{$ext}", $this->image);
             $imagePath = public_path() . "/img/" . $thumbnail;
             if (file_exists($imagePath)) $imageUrl = asset("img/" . $thumbnail);
@@ -83,6 +89,7 @@ class Post extends Model
             return '<span class="label label-success">Published</span>';
         }
     }
+
 
     public function scopeLatestFirst($query)
     {
