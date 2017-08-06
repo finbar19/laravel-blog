@@ -167,7 +167,7 @@
         var simplemde2 = new SimpleMDE({ element: $("#body")[0] });
 
         $('#datetimepicker1').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'Y-m-d H:i:s',
             showClear: true
         });
 
