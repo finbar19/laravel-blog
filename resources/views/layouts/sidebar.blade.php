@@ -50,7 +50,7 @@
                         </div>
                       @endif
                         <div class="post-body">
-                            <h6><a href="{ route('blog.show', $post->slug) }}">{{ $post->title }}/a></h6>
+                            <h6><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h6>
                             <div class="post-meta">
                                 <span>{{ $post->date }}</span>
                             </div>
