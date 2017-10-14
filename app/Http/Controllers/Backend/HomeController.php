@@ -14,6 +14,24 @@ class HomeController extends BackendController
      */
     public function index()
     {
-        return view('backend.home');
+        return view('backend.home.index');
+    }
+
+    public function edit(Request $request)
+    {
+        $user = $request->user();
+        return view('backend.home.edit', compact('user'));
+    }
+
+    public function update(Requests\AccountUpdateRequest $request)
+    {
+        $data = $request->all();
+        if (empty($data['password'])) unset($data['password']);
+        else $data['password'] = bcrypt($data['password']);
+
+        $user = $request->user();
+        $user->update($request->all());
+
+        return redirect()->back()->with('message', 'Account was updated successfully!');
     }
 }
