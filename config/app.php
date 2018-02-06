@@ -128,6 +128,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
+        Alaouy\Youtube\YoutubeServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -182,6 +183,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Laratrust' => Laratrust\LaratrustFacade::class,
+        'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

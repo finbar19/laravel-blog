@@ -57,6 +57,12 @@
                         </div>
                     </li>
                   @endforeach
+                  <li>
+                    @php
+                    //$videoList = Youtube::getPopularVideos('us');
+                    //$videoList = Youtube::listChannelVideos('PLDoEGwU4MwRA6Is4ua_PTuHNPBgWb8xOm', 40);
+                    @endphp
+                  </li>
                 </ul>
             </div>
         </div>
