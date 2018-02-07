@@ -15,7 +15,8 @@ class BlogController extends Controller
       $posts = Post::with('author')
                     ->latestFirst()
                     ->published()
-                    ->paginate($this->limit);
+                    ->filter(request('term'))
+                    ->simplePaginate($this->limit);
       return view("blog.index", compact('posts'));
     }
 
@@ -47,7 +48,7 @@ class BlogController extends Controller
     /**
      * add count to the post when vieved
      * @param $post
-     * @return int +1 
+     * @return int +1
      */
     public function show(Post $post)
     {
